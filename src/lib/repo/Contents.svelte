@@ -14,7 +14,9 @@
         <ul>
             {#each $contents.data as content}
             {#if allowedFolderNames.includes(content.name)}
-                <li>{content.name}</li>
+                <li>
+                    <a href="/{content.name}">{content.name}</a>
+                </li>
             {/if}
         {/each}
         </ul>
