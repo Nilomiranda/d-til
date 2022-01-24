@@ -42,8 +42,18 @@
     {#if $repositoryData.isLoading}
         <strong>Loading</strong>
     {:else}
-        <div>
+        <div class="blog-content">
             {@html rendered}
         </div>
     {/if}
 </article>
+
+<style>
+    :global(article div.blog-content p) {
+        margin-bottom: 1rem !important;
+    }
+
+    :global(article div.blog-content pre) {
+        margin-bottom: 1rem !important;
+    }
+</style>
