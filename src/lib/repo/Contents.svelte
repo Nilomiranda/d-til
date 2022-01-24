@@ -1,9 +1,7 @@
 <script lang="ts">
     import { useQuery } from "@sveltestack/svelte-query";
-    import { githubUserName, repositoryName } from "../../constants";
+    import { allowedFolderNames, githubUserName, repositoryName } from "../../constants";
     import type { RepositoryContent } from "../../interfaces/repository";
-
-    const allowedFolderNames = ['html', 'mongo'];
 
     const contents = useQuery<unknown, unknown, RepositoryContent[]>(`repos/${githubUserName}/${repositoryName}/contents`)
 </script>
