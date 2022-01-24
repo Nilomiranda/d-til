@@ -33,6 +33,11 @@ project-root
         | - I learned this today.md
 ```
 
+## Allowed content
+
+Check the file `constants.ts`.
+Use the variable `allowedFolderNames` to set an array of allowed folders that should be render in the application.
+
 ## Important notes
 
 Right now the requests to github are all unauthenticated. Rate limits to your requests may apply.
