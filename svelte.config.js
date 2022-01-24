@@ -19,7 +19,7 @@ const config = {
 		},
 
 		vite: {
-			optimizeDeps: {include: ['broadcast-channel']},
+			optimizeDeps: {include: ['broadcast-channel', 'highlight.js/lib/core']},
 		}
 	}
 };
