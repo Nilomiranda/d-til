@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from '$app/stores'
-import { useQuery } from '@sveltestack/svelte-query';
+    import { useQuery } from '@sveltestack/svelte-query';
     
     const { params: { content } } = $page;
 
@@ -11,6 +11,8 @@ import { useQuery } from '@sveltestack/svelte-query';
     {#if $repositoryData.isLoading}
         <strong>Loading repository details</strong>
     {:else}
-        <h1>{$repositoryData.data[0].name.replace('.md', '')}</h1>
+        {#each $repositoryData.data as repositoryContent}
+            <a href="/{repositoryContent.path}">{repositoryContent.name.replace('.md', '')}</a>
+        {/each}
     {/if}
 </div>
