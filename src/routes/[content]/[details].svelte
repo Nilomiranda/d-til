@@ -8,8 +8,6 @@
     import { githubUserName, repositoryName } from '../../constants';
     
     const { url: { pathname }, params: { details } } = $page;
-    console.log('$page', $page)
-
 
     const repositoryData = useQuery(`repos/${githubUserName}/${repositoryName}/contents${pathname}`, ({ queryKey }) => defaultQueryFunction({ queryKey, config: {
         headers: {
