@@ -37,6 +37,10 @@
   })
 </script>
 
+<svelte:head>
+    <title>{details.replace('.md', '')}</title>
+</svelte:head>
+
 <article class="flex flex-col items-center">
     <a href="../" class="mb-11">Go back</a>
     <h1 class="heading-h1 mb-14">{details.replace('.md', '')}</h1>

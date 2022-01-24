@@ -8,6 +8,10 @@ import type { RepositoryData } from '../../interfaces/repository';
     const repositoryData = useQuery<unknown, unknown, RepositoryData[]>(`repos/nilomiranda/TIL/contents/${content}`)
 </script>
 
+<svelt:head>
+    <title>{url?.pathname?.replace('/', '')}</title>
+</svelt:head>
+
 <div class="w-full flex flex-col items-center">
     {#if $repositoryData.isLoading}
         <strong>Loading repository details</strong>

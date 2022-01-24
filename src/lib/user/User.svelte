@@ -5,6 +5,14 @@ import type { User } from '../../interfaces/user';
     const githubUser = useQuery<unknown, unknown, User>('users/nilomiranda')
 </script>
 
+<svelt:head>
+    {#if $githubUser.isLoading}
+        <title>TIL</title>
+    {:else}
+        <title>{$githubUser.data.login}'s TIL</title>
+    {/if}
+</svelt:head>
+
 <main class="flex flex-col items-center">
     {#if $githubUser.isLoading}
         <strong class="text-3xl font-bold underline">Loading user</strong>
