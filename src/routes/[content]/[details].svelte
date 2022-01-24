@@ -55,5 +55,8 @@
 
     :global(article div.blog-content pre) {
         margin-bottom: 1rem !important;
+        background: #FFE6BC77;
+        padding: 1.25rem 1rem;
+        border-radius: 1rem;
     }
 </style>
