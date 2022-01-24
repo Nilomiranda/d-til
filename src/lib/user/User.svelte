@@ -6,7 +6,7 @@
 
 <main>
     {#if $githubUser.isLoading}
-        <strong>Loading user</strong>
+        <strong class="text-3xl font-bold underline">Loading user</strong>
     {:else}
         <div>
             <img src={$githubUser.data.avatar_url} alt="{$githubUser.data.login} profile picture" />

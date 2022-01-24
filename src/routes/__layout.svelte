@@ -1,4 +1,5 @@
 <script lang="ts">
+    import "../app.css";
 	import Header from '$lib/header/Header.svelte';
 	import { QueryClient, QueryClientProvider, useQuery } from '@sveltestack/svelte-query'
     import { defaultQueryFunction } from '../config/query/client';
