@@ -20,7 +20,6 @@
     {#if $repositoryData.isLoading}
         <strong>Loading</strong>
     {:else}
-        <!-- <p>{$repositoryData.data}</p> -->
         <SvelteMarkdown source={$repositoryData.data} />
     {/if}
 </article>
