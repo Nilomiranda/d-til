@@ -5,12 +5,13 @@
     import MarkdownIt from 'markdown-it'
     import 'highlight.js/styles/a11y-light.css'
     import hljs from 'highlight.js'
+    import { githubUserName, repositoryName } from '../../constants';
     
     const { url: { pathname }, params: { details } } = $page;
     console.log('$page', $page)
 
 
-    const repositoryData = useQuery(`repos/nilomiranda/TIL/contents${pathname}`, ({ queryKey }) => defaultQueryFunction({ queryKey, config: {
+    const repositoryData = useQuery(`repos/${githubUserName}/${repositoryName}/contents${pathname}`, ({ queryKey }) => defaultQueryFunction({ queryKey, config: {
         headers: {
             Accept: 'application/vnd.github.v3.raw+json'
         }

@@ -1,16 +1,13 @@
 <script lang="ts">
     import { useQuery } from '@sveltestack/svelte-query'
-import type { User } from '../../interfaces/user';
+    import { githubUserName } from '../../constants';
+    import type { User } from '../../interfaces/user';
 
-    const githubUser = useQuery<unknown, unknown, User>('users/nilomiranda')
+    const githubUser = useQuery<unknown, unknown, User>(`users/${githubUserName}`)
 </script>
 
 <svelt:head>
-    {#if $githubUser.isLoading}
-        <title>TIL</title>
-    {:else}
-        <title>{$githubUser.data.login}'s TIL</title>
-    {/if}
+    <title>{githubUserName}'s TIL</title>
 </svelt:head>
 
 <main class="flex flex-col items-center">

@@ -1,11 +1,12 @@
 <script lang="ts">
     import { page } from '$app/stores'
     import { useQuery } from '@sveltestack/svelte-query';
-import type { RepositoryData } from '../../interfaces/repository';
+    import { githubUserName, repositoryName } from '../../constants';
+    import type { RepositoryData } from '../../interfaces/repository';
     
     const { params: { content }, url } = $page;
 
-    const repositoryData = useQuery<unknown, unknown, RepositoryData[]>(`repos/nilomiranda/TIL/contents/${content}`)
+    const repositoryData = useQuery<unknown, unknown, RepositoryData[]>(`repos/${githubUserName}/${repositoryName}/contents/${content}`)
 </script>
 
 <svelt:head>
