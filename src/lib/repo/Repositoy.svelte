@@ -4,10 +4,10 @@
     const repository = useQuery('repos/nilomiranda/TIL')
 </script>
 
-<main>
+<div class="flex flex-col items-center">
     {#if $repository.isLoading}
         <strong>Loading repository</strong>
     {:else}
-        <a rel="noreferrer" href={$repository.data.html_url}>Go to repository on Github</a>
+        <a rel="noreferrer" class="mb-5 block" href={$repository.data.html_url}>Go to repository on Github</a>
     {/if}
-</main>
+</div>

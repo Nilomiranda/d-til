@@ -6,12 +6,12 @@
     const contents = useQuery('repos/nilomiranda/TIL/contents')
 </script>
 
-<main>
+<div class="flex flex-col items-center">
     {#if $contents.isLoading}
         <strong>Loading contents</strong>
     {:else}
         
-        <ul>
+        <ul class="flex flex-col items-center">
             {#each $contents.data as content}
             {#if allowedFolderNames.includes(content.name)}
                 <li>
@@ -22,4 +22,4 @@
         </ul>
 
     {/if}
-</main>
+</div>

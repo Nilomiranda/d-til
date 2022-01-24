@@ -13,8 +13,9 @@
     } }))
 </script>
 
-<div>
-    <h1>Content</h1>
+<article class="flex flex-col">
+    <a href="../" class="mb-11">Go back</a>
+    <h1 class="heading-h1 mb-14">Content</h1>
 
     {#if $repositoryData.isLoading}
         <strong>Loading</strong>
@@ -22,4 +23,4 @@
         <!-- <p>{$repositoryData.data}</p> -->
         <SvelteMarkdown source={$repositoryData.data} />
     {/if}
-</div>
+</article>
