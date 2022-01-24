@@ -32,3 +32,9 @@ project-root
     | - more_content_folder
         | - I learned this today.md
 ```
+
+## Important notes
+
+Right now the requests to github are all unauthenticated. Rate limits to your requests may apply.
+With that in mind, your repository **can't be private**.
+Remember to not put any sensitive information in this repository.
