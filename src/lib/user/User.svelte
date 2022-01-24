@@ -18,7 +18,9 @@ import type { User } from '../../interfaces/user';
         <strong class="text-3xl font-bold underline">Loading user</strong>
     {:else}
         <div class="flex flex-col items-center">
-            <img class="h-20 w-20 rounded-full" src={$githubUser.data.avatar_url} alt="{$githubUser.data.login} profile picture" />
+            <a href="https://github.com/{$githubUser.data.login}">
+                <img class="h-20 w-20 rounded-full" src={$githubUser.data.avatar_url} alt="{$githubUser.data.login} profile picture" />
+            </a>
             <h1 class="heading-h1 text-center w-full">{$githubUser.data.login}'s TIL</h1>
         </div>
     {/if}
