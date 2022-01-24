@@ -19,3 +19,16 @@ Setup your github's username and the repositoy name where you are holding your T
 VITE_GITHUB_USERNAME=nilomiranda
 VITE_GITHUB_REPOSITORY=TIL
 ```
+
+## Github's TIL repositoy structure
+
+Ideally, you should separete content by folder. Keep each content folder at the root of your repository.
+Inside each folder, write what you learned in a markdown file.
+
+```
+project-root
+    | - content_folder
+    | - another_content_folder
+    | - more_content_folder
+        | - I learned this today.md
+```
