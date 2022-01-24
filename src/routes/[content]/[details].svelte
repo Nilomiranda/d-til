@@ -6,7 +6,9 @@
     import 'highlight.js/styles/a11y-light.css'
     import hljs from 'highlight.js'
     
-    const { url: { pathname } } = $page;
+    const { url: { pathname }, params: { details } } = $page;
+    console.log('$page', $page)
+
 
     const repositoryData = useQuery(`repos/nilomiranda/TIL/contents${pathname}`, ({ queryKey }) => defaultQueryFunction({ queryKey, config: {
         headers: {
@@ -37,12 +39,12 @@
 
 <article class="flex flex-col items-center">
     <a href="../" class="mb-11">Go back</a>
-    <h1 class="heading-h1 mb-14">Content</h1>
+    <h1 class="heading-h1 mb-14">{details.replace('.md', '')}</h1>
 
     {#if $repositoryData.isLoading}
         <strong>Loading</strong>
     {:else}
-        <div class="blog-content">
+        <div class="blog-content w-full max-w-4xl px-4">
             {@html rendered}
         </div>
     {/if}
@@ -58,5 +60,6 @@
         background: #FFE6BC77;
         padding: 1.25rem 1rem;
         border-radius: 1rem;
+        overflow-x: auto;
     }
 </style>
