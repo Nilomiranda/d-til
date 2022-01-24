@@ -1,7 +1,8 @@
 <script lang="ts">
     import { useQuery } from '@sveltestack/svelte-query'
+import type { Repository } from '../../interfaces/repository';
 
-    const repository = useQuery('repos/nilomiranda/TIL')
+    const repository = useQuery<unknown, unknown, Repository>('repos/nilomiranda/TIL')
 </script>
 
 <div class="flex flex-col items-center">

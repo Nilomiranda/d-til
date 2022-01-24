@@ -1,9 +1,10 @@
 <script lang="ts">
     import { useQuery } from "@sveltestack/svelte-query";
+import type { RepositoryContent } from "../../interfaces/repository";
 
     const allowedFolderNames = ['html', 'mongo'];
 
-    const contents = useQuery('repos/nilomiranda/TIL/contents')
+    const contents = useQuery<unknown, unknown, RepositoryContent[]>('repos/nilomiranda/TIL/contents')
 </script>
 
 <div class="flex flex-col items-center">

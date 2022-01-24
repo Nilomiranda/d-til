@@ -1,7 +1,8 @@
 <script lang="ts">
     import { useQuery } from '@sveltestack/svelte-query'
+import type { User } from '../../interfaces/user';
 
-    const githubUser = useQuery('users/nilomiranda')
+    const githubUser = useQuery<unknown, unknown, User>('users/nilomiranda')
 </script>
 
 <main class="flex flex-col items-center">

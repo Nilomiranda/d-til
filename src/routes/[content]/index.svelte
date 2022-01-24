@@ -1,10 +1,11 @@
 <script lang="ts">
     import { page } from '$app/stores'
     import { useQuery } from '@sveltestack/svelte-query';
+import type { RepositoryData } from '../../interfaces/repository';
     
     const { params: { content }, url } = $page;
 
-    const repositoryData = useQuery(`repos/nilomiranda/TIL/contents/${content}`)
+    const repositoryData = useQuery<unknown, unknown, RepositoryData[]>(`repos/nilomiranda/TIL/contents/${content}`)
 </script>
 
 <div class="w-full flex flex-col items-center">
