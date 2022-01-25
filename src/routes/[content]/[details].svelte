@@ -65,4 +65,11 @@
         border-radius: 1rem;
         overflow-x: auto;
     }
+
+    :global(article div.blog-content code) {
+        background: #FFE6BC77;
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        overflow-x: auto;
+    }
 </style>
