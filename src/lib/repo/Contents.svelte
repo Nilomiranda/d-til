@@ -1,6 +1,6 @@
 <script lang="ts">
     import { useQuery } from "@sveltestack/svelte-query";
-    import { allowedFolderNames, githubUserName, repositoryName } from "../../constants";
+    import { githubUserName, repositoryName, forbiddenFolderNames } from "../../constants";
     import type { RepositoryContent } from "../../interfaces/repository";
 
     const contents = useQuery<unknown, unknown, RepositoryContent[]>(`repos/${githubUserName}/${repositoryName}/contents`)
@@ -13,7 +13,7 @@
         
         <ul class="flex flex-col items-center">
             {#each $contents.data as content}
-            {#if allowedFolderNames.includes(content.name)}
+            {#if !forbiddenFolderNames.includes(content.name)}
                 <li>
                     <a href="/{content.name}">{content.name}</a>
                 </li>

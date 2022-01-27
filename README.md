@@ -33,10 +33,12 @@ project-root
         | - I learned this today.md
 ```
 
-## Allowed content
+## Forbidden/hidden content
 
-Check the file `constants.ts`.
-Use the variable `allowedFolderNames` to set an array of allowed folders that should be render in the application.
+Use the env var `VITE_FORBIDDEN_FOLDERS` to configure folders that should be excluded from being rendered
+in the content list.
+
+Names should be comma separated.
 
 ## Important notes
 
